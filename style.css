@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --white: #fff;
+  --dark-white: #a6b2ec;
+  --body-bg: #0260a0;
+  --mainColor: #93d2f5;
+  --dark-mainColor: #353358;
+  --calculator: #3ca4e5;
+  --dark-calculator: #060a30;
+  --activeToggle: #93dcf5;
+  --number: #d6daf7;
+  --dark-number: #f4acc4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--body-bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.calculator {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--calculator);
+}
+
+.theme-toggler {
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+  cursor: pointer;
+	font-size: 40px;
+	color: var(--dark-mainColor);
+  z-index: 1;
+}
+
+.theme-toggler.active {
+  color: var(--activeToggle);
+}
+
+.theme-toggler.active::before {
+  color: var(--white);
+}
+
+#display {
+  margin: 0 10px;
+  height: 150px;
+  width: auto;
+  max-width: 270px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 30px;
+  margin-bottom: 20px;
+  overflow-x: scroll;
+}
+
+#display::-webkit-scrollbar {
+  display: block;
+  height: 3px;
+}
+
+button {
+  height: 60px;
+  width: 60px;
+  border: 0;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  color: #282828;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.calculator #display {
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
+.calculator button#clear {
+  background-color: var(--mainColor);
+}
+
+.calculator button.btn-number {
+  background-color: var(--number);
+}
+
+.calculator button.btn-operator {
+  background-color: var(--activeToggle);
+}
+
+.calculator button.btn-equal {
+  background-color: var(--mainColor);
+}
+
+.calculator.dark {
+  background-color: var(--dark-calculator);
+}
+
+.calculator.dark #display {
+  background-color: var(--dark-white);
+}
+
+.calculator.dark button#clear {
+  background-color: var(--dark-mainColor);
+  color: var(--white);
+}
+
+.calculator.dark button.btn-number {
+  background-color: var(--dark-number);
+}
+
+.calculator.dark button.btn-operator {
+  background-color: var(--dark-mainColor);
+  color: var(--white);
+}
+
+.calculator.dark button.btn-equal {
+  background-color: var(--dark-mainColor);
+  color: var(--white);
+}
